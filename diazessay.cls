@@ -31,7 +31,7 @@
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
-\usepackage[english]{babel} % English language hyphenation
+\usepackage[portuguese]{babel} % Portuguese language hyphenation
 
 \usepackage{graphicx} % Required for including images
 \graphicspath{{Figures/}{./}} % Specifies where to look for included images (trailing slash required)
