@@ -5,12 +5,15 @@
   \usepackage{csquotes} % for apa style
   \usepackage[utf8]{inputenc}
   \usepackage{times} % Times new Roman
-  \usepackage{sectsty} % change section fount
+  \usepackage{titlesec} % change section fount
   \usepackage{xcolor} % colors
 % }
 
-\sectionfont{\normalfont\footnotesize\textcolor{lightgray!70}}
+\titleformat*{\section}{\normalfont\small\color{lightgray}}
+\titlespacing{\section}{0pt}{15pt}{2pt}
 
+\titleformat*{\subsection}{\normalfont\normalsize\bfseries}
+\titlespacing{\subsection}{5pt}{-2pt}{3pt}
 
 \title{\textbf{TODO Título} \\ {\Large\itshape TODO subtítulo}}
 \author{\textbf{Plancha; 105289} \\ \textit{ISCTE-IUL}}
@@ -22,8 +25,27 @@
 \maketitle
 
 \section*{ClearviewAI}
-Em 2020, Matthias Marx apresentou uma queixa dentro do Regulamento Geral sobre a Proteção de Dados (RGPD) contra Clearview AI, uma empresa americana expecializada em reconhecimento facial, por ter guardado e processado as suas fotos públicas sem o seu conhecimento e consentimento \parencite{wired}.
+Em 2020, Matthias Marx apresentou uma queixa dentro do Regulamento Geral sobre a Proteção de Dados (RGPD) contra Clearview AI, uma empresa americana expecializada em reconhecimento facial (RF), por ter guardado e processado as suas fotos públicas sem o seu conhecimento e consentimento \parencite{wired}. Embora pareça intuitívo que Marx esteja no seu direito da reclamação, devido à quebra de vários artigos do RGPD, incluindo artigos 13 e 14, questões morais sobre o caso e o próprio processo de recolha e uso dos dados executado pela empresa podem ser levantadas.
 
+Neste ensaio, estas questões vão ser analisadas usando o método de Bynum \parencite{Bynum}, de forma a entender melhor o caso e a sua relevância, bem como a sua importância para o futuro da privacidade e proteção de dados, em termos de ética digital e de responsabilidade social.
+
+\section*{Análise do caso}
+\subsection*{Ponto de vista ético}
+Este caso possivelmente envolve questões éticas em vários valores éticos, incluindo potencialmente a privacidade, segurança, propriedade intelectual e consentimento de Marx, a liberdade de expressão e informação da companhia, e da privacidade e segurança pública e privada dos cidadãos.
+
+\subsubsection*{Participantes}
+O caso em questão envolve os seguintes participantes\parencite{first}: 
+\begin{itemize}
+  \item[Clearview AI:] A empresa criar a sua ferramenta de RF, criando perfis biométricos de pessoas a partir das suas fotos públicadas em redes sociais, blogs, ou qualquer outro site que a ferramenta tenha acesso a, de forma a combater crime, sem o consentimento e conhecimento dos indivíduos;
+  \item[Matthias Marx:] O indivíduo que apresentou a queixa, que sentiu que a sua privacidade tenha sido quebrada após um Pedido de Acesso dos Dados do Titular (PADT) à empresa ter revelado as suas fotos associados ao seu nome, apenas com reconhecimento da sua cara tenha sido feita com a sua autorização; Marx também não garantiu que as suas fotos não tenham sido públicadas publicamente por terceiros ou por ele mesmo, tornando tais fotografias acessiveis a qualquer pessoa (ou máquina) com acesso à internet;
+  \item[Agentes não humanos: ] As ferramentas que levou à queixa foram o \textit{web crawler}, a base de dados e o sistema de RF. De forma a facilitar a descrição, cada um deles vai ter o nome de \textsc{a\_wc}, \textsc{a\_bd} e \textsc{a\_rf}, respectivamente.
+  \item[Engenheiros do sistema] Os engenheiros que criaram a ferramenta de RF e usaram técnicas de \textit{web crawling} para recolher e guardar as fotos públicas de indivíduos, sem o seu consentimento, podem ter potencialmente ter quebrado código de conduta e ética profissional, na construção do programa;
+  \item[Reguladora de Alemanha:] A autoridade reguladora alemã processou a queixa de Marx sobre a quebra do RGPD.
+\end{itemize}
+
+\subsubsection*{Questões éticas e problemas}
+\textsc{a\_wc} guardou as imagens de Marx sem o seu consentimento, de forma a serem identificadas pela \textsc{a\_rf}. Quem é o responsável aqui? A quebra de privacidade e do RGPD de indivíduos da União Europeia foi intencional ou uma consequência não prevista? Foram essas quebras necessárias para a segurança pública? As quebras foram feitas pelo processo de qual ferramenta/combinação de ferramentas: \textsc{a\_wc}, \textsc{a\_bd} ou \textsc{a\_rf}? Quem é responsável humano por estas quebras; o CEO, os engenheiros ou Marx? Se a quebra de privacidade fosse não intencional, quem é/são o/os responsável/eis? Foi apenas um acidente ou uma falha de segurança? A empresa está a recolher fotos de indivíduos fora dos Estados Unidos. Há alguma forma de de impedir este resultado? Deve a companhia importar-se com esses indivíduos, sendo que esses não são o foco da empresa, e se a ferramenta apenas ser usada no país, deve ela preocupar-se com a identificação de indivíduos fora dele? Se a ferramenta for suficientemente correta no seu reconhecimento e nos seus perfis, há possibilidade dos dados de Marx e outros serem expostos e usados de forma imoral ou ilegal? A própria ferramenta seria ilegal se fosse usada na Europa? Se os agentes fossem roubados por terceiros, seria possível que a segurança e privacidade de Marx estivesse em risco? Este caso podia ter sido evitado de alguma forma?
+\subsubsection*{Análise sistémica}
 
 \printbibliography[title=Referências]
 \end{document}
