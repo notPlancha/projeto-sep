@@ -8,6 +8,7 @@
   \usepackage{titlesec} % change section fount
   \usepackage{xcolor} % colors
   \usepackage{csquotes} % quotes
+  \usepackage{textcomp} % for º
 % }
 
 \titleformat*{\section}{\normalfont\small\color{lightgray}}
@@ -16,9 +17,9 @@
 \titleformat*{\subsection}{\normalfont\normalsize\bfseries}
 \titlespacing{\subsection}{5pt}{-2pt}{3pt}
 
-\title{\textbf{Análise do caso de \textit{Clearview AI} e Matthias Marx} \\ {\Large\itshape Trabalho elaborado como parte 2 no âmbito da Unidade Curricular de Segurança, Ética e Privacidade do 2º ano da Licenciatura em Ciência de Dados}}
+\title{\textbf{Análise do caso de \textit{Clearview AI} e Matthias Marx} \\ {\Large\itshape Trabalho elaborado como parte 2 no âmbito da Unidade Curricular de Segurança, Ética e Privacidade do 2\textdegree ano da Licenciatura em Ciência de Dados}}
 \author{\textbf{Plancha; 105289} \\ \textit{ISCTE-IUL}}
-\date{\today , Versão 1.0.0}
+\date{\today , Versão 1.0.1}
 
 \addbibresource{referLink.bib}
 
@@ -26,7 +27,7 @@
 \maketitle
 
 \section*{ClearviewAI}
-Em 2020, Matthias Marx apresentou uma queixa dentro do Regulamento Geral sobre a Proteção de Dados (RGPD) contra Clearview AI, uma empresa americana expecializada em reconhecimento facial (RF), por ter guardado e processado as suas fotos públicas sem o seu conhecimento e consentimento \parencite{wired}. Embora pareça intuitívo que Marx esteja no seu direito da reclamação, devido à quebra de vários artigos do RGPD, incluindo artigos 13 e 14, questões morais sobre o caso e o próprio processo de recolha e uso dos dados executado pela empresa podem ser levantadas.
+Em 2020, Matthias Marx apresentou uma queixa dentro do Regulamento Geral sobre a Proteção de Dados (RGPD) contra a Clearview AI, uma empresa americana especializada em reconhecimento facial (RF), por ter guardado e processado as suas fotos públicas sem o seu conhecimento e consentimento \parencite{wired}. Embora pareça intuitivo que Marx esteja no seu direito de reclamar, devido à quebra de vários artigos do RGPD, incluindo os artigos 13 e 14, questões morais sobre o caso e o próprio processo de recolha e uso dos dados executado pela empresa podem ser levantadas.
 
 Neste ensaio, estas questões vão ser analisadas usando o método de Bynum \parencite{Bynum}, de forma a entender melhor o caso e a sua relevância, bem como a sua importância para o futuro da privacidade e proteção de dados, em termos de ética digital e de responsabilidade social.
 
@@ -35,51 +36,66 @@ Neste ensaio, estas questões vão ser analisadas usando o método de Bynum \par
 Este caso possivelmente envolve questões éticas em vários valores éticos, incluindo potencialmente a privacidade, segurança, propriedade intelectual e consentimento de Marx, a liberdade de expressão e informação da empresa, e da privacidade e segurança pública e privada dos cidadãos.
 
 \subsubsection*{Participantes}
-O caso em questão envolve os seguintes participantes\parencite{first}: 
+O caso em questão envolve os seguintes participantes \parencite{first}: 
 \begin{itemize}
-  \item[Clearview AI:] A empresa criar a sua ferramenta de RF, criando perfis biométricos de pessoas a partir das suas fotos públicadas em redes sociais, blogs, ou qualquer outro site que a ferramenta tenha acesso a, de forma a combater crime, sem o consentimento e conhecimento dos indivíduos;
-  \item[Matthias Marx:] O indivíduo que apresentou a queixa, que sentiu que a sua privacidade tenha sido quebrada após um Pedido de Acesso dos Dados do Titular (PADT) à entidade ter revelado as suas fotos associados ao seu nome, apenas com reconhecimento da sua cara tenha sido feita com a sua autorização; Marx também não garantiu que as suas fotos não tenham sido públicadas publicamente por terceiros ou por ele mesmo, tornando tais fotografias acessiveis a qualquer pessoa (ou máquina) com acesso à internet;
-  \item[Agentes não humanos: ] As ferramentas que levou à queixa foram o \textit{web crawler}, a base de dados e o sistema de RF. De forma a facilitar a descrição, cada um deles vai ter o nome de \textsc{a\_wc}, \textsc{a\_bd} e \textsc{a\_rf}, respectivamente.
-  \item[Engenheiros do sistema] Os engenheiros que criaram a ferramenta de RF e usaram técnicas de \textit{web crawling} para recolher e guardar as fotos públicas de indivíduos, sem o seu consentimento, podem ter potencialmente ter quebrado código de conduta e ética profissional, na construção do programa;
-  \item[Reguladora de Alemanha:] A autoridade reguladora alemã processou a queixa de Marx sobre a quebra do RGPD.
+  \item[\textit{Clearview AI:}] A empresa que desenvolveu a sua ferramenta de RF, criando perfis biométricos de pessoas a partir das suas fotos publicadas em redes sociais, blogs, ou qualquer outro \textit{site} que a ferramenta tenha acesso a, de forma a combater o crime, sem o consentimento e conhecimento dos indivíduos;
+  \item[Matthias Marx:] O indivíduo que apresentou a queixa, e que sentiu que a sua privacidade tinha sido quebrada após um Pedido de Acesso dos Dados do Titular (PADT) à \textit{Clearview AI}, revelando as suas fotos associados ao seu nome, apenas com reconhecimento da sua face; Marx também não garantiu que as suas fotos não tenham sido publicadas por terceiros ou por ele mesmo, tornando tais fotografias acessíveis a qualquer pessoa (ou máquina) com acesso à internet;
+  \item[Agentes não humanos:] As ferramentas que levaram à queixa foram o \textit{web crawler}, a base de dados e o sistema de RF. De forma a facilitar a descrição, cada um deles vai ter o nome de \textsc{a\_wc}, \textsc{a\_bd} e \textsc{a\_rf}, respectivamente.
+  \item[Engenheiros do sistema] Os engenheiros que criaram a ferramenta de RF e usaram técnicas de \textit{web crawling} para recolher e guardar as fotos públicas de indivíduos, sem o seu consentimento, podem potencialmente ter quebrado código de conduta e ética profissional, na construção do programa;
+  \item[Reguladora alemã:] A autoridade que processou a queixa de Marx sobre a quebra do RGPD.
 \end{itemize}
 
 \subsubsection*{Questões éticas e problemas}
-\textsc{a\_wc} guardou as imagens de Marx sem o seu consentimento, de forma a serem identificadas pela \textsc{a\_rf}. Quem é o responsável aqui? A quebra de privacidade e do RGPD de indivíduos da União Europeia foi intencional ou uma consequência não prevista? Foram essas quebras necessárias para a segurança pública? As quebras foram feitas pelo processo de qual ferramenta/combinação de ferramentas: \textsc{a\_wc}, \textsc{a\_bd} ou \textsc{a\_rf}? Quem é responsável humano por estas quebras; o CEO, os engenheiros ou Marx? Se a quebra de privacidade fosse não intencional, quem é/são o/os responsável/eis? Foi apenas um acidente ou uma falha de segurança? A empresa está a recolher fotos de indivíduos fora dos Estados Unidos. Há alguma forma de de impedir este resultado? Deve essa importar-se com esses indivíduos, sendo que esses não são o foco da corporação, e se a ferramenta apenas ser usada no país, deve ela preocupar-se com a identificação de indivíduos fora dele? Se a ferramenta for suficientemente correta no seu reconhecimento e nos seus perfis, há possibilidade dos dados de Marx e outros serem expostos e usados de forma imoral ou ilegal? A própria ferramenta seria ilegal se fosse usada na Europa? Se os agentes fossem roubados por terceiros, seria possível que a segurança e privacidade de Marx estivesse em risco? Este caso podia ter sido evitado de alguma forma?
-\subsubsection*{Análise sistémica}
-De seguida vai ser feita uma análise do caso de acordo a diferentes sistemas de análise de moralidade, tendo em conta os direitos e deveres de cada um dos participantes onde questões éticas foram levantadas:
-\paragraph{Utilitarianismo}
+\textsc{a\_wc} guardou as imagens de Marx sem o seu consentimento, de forma a serem identificadas pela \textsc{a\_rf}. Quem é o responsável aqui? A quebra de privacidade e do RGPD de indivíduos da União Europeia foi intencional ou uma consequência não prevista? Foram essas quebras necessárias para a segurança pública? As quebras foram feitas pelo processo de qual ferramenta/combinação de ferramentas: \textsc{a\_wc}, \textsc{a\_bd} ou \textsc{a\_rf}? Quem é responsável por estas quebras: o CEO, os engenheiros ou Marx? Se a quebra de privacidade fosse não intencional, quem são os responsáveis? Foi apenas um acidente ou uma falha de segurança? A empresa está a recolher fotos de indivíduos fora dos Estados Unidos. Há alguma forma de impedir este resultado? Deve a empresa americana importar-se com esses indivíduos, sendo que esses não são o seu foco? E se a ferramenta apenas for usada no país, deve ela preocupar-se com a identificação de indivíduos fora dele? Se a ferramenta for suficientemente correta no seu reconhecimento e nos seus perfis, há possibilidade dos dados de Marx e outros serem expostos e usados de forma imoral ou ilegal? A própria ferramenta seria ilegal se fosse usada na Europa? Se os agentes fossem roubados por terceiros, seria possível que a segurança e privacidade de Marx estivessem em risco? Este caso podia ter sido evitado de alguma forma?
+\subsubsection*{Análise sistemática}
+De seguida vai ser feita uma análise do caso de acordo com diferentes sistemas de análise de moralidade, tendo em conta os direitos e deveres de cada um dos participantes onde questões éticas foram levantadas:
+\paragraph{Utilitarismo}
 De acordo com Mill (\citeyear{mill}), 
 \begin{displayquote}
-  A crença que aceita como fundamento da moralidade a Utilidade, ou o Princípio da Maior Felicidade, sustenta que ações são corretas na medida em que tendem a promover a felicidade \textins{total}, e erradas na medida em que tendem a produzir o contrário da felicidade \textins{total}
+  A crença que aceita como fundamento da moralidade a Utilidade, ou o Princípio da Maior Felicidade, sustenta que ações são corretas na medida em que tendem a promover a felicidade \textins{total}, e erradas na medida em que tendem a produzir o contrário da felicidade \textins{total}.
 \end{displayquote}
-Em utilitarianismo clássico, consegue ser argumentado que a quebra de privacidade pode ser considerado moralmente aceitável para uma melhor segurança pública mais ampla, e RF seria uma forma de melhorar segurança pública. No entanto, pode ser argumentado também que uma pontencial quebra de informação para terceiros sem as melhores intenções pode levar um utilitarista a negar estes positivos. Pelo mesmo facto, ninguém garante que esta empresa não tenha tais intenções. \\
-Consegue ser também argumentado que a execução de recolha dos dados não foi a que promove maior felicidade, sendo que a falta de conhecimento e consentimento da vítima levou a uma infelicidade maior. Outras formas de recolha de biometria ou até outros métodos de tal consegue quebrar a privacidade de forma mais aceitável, com a mesma consequência, assim promovendo maior felicidade. Como por exemplo, a companhia podia ter requesitado apenas fotografias usadas de forma consentida, como fotos de perfil de redes sociais, ou fotos de documentos de identificação, ou ter apenas recolhido impressões digitais. \\
-Em outras teorias de utilitarianismo, como o utilitarianismo de Popper (\citeyear{popper}):
+Em utilitarismo clássico, consegue-se ser argumentado que a quebra de privacidade pode ser considerado moralmente aceitável para uma segurança pública mais ampla, e RF seria uma forma de melhorá-la. No entanto, pode ser argumentado também que uma potencial quebra de informação para terceiros sem as melhores intenções pode levar um utilitarista a negar estas situações positivas. Pelo mesmo facto, ninguém garante que esta empresa não tenha tais intenções.
+
+
+Consegue ser também argumentado que a execução de recolha dos dados não foi a que promove maior felicidade, sendo que a falta de conhecimento e consentimento da vítima levou a uma infelicidade maior. Técnicas, ou métodos de recolha de biometria alternativos conseguem quebrar a privacidade de forma mais aceitável, com a mesma consequência, assim promovendo maior felicidade. Como por exemplo, a companhia podia ter coletado apenas fotografias usadas de forma consentida, como fotos de perfil de redes sociais, ou fotos de documentos de identificação, ou ter apenas recolhido impressões digitais. 
+
+
+Em outras teorias de utilitarismo, como o utilitarismo de Popper (\citeyear{popper}):
 \begin{displayquote}
   \textelp{} um humano a sofrer faz um apelo moral direto, especificamente, o apelo por ajuda, enquanto que não há apelo semelhante para aumentar a felicidade de um homem que esteja bem.
 \end{displayquote}
-Neste caso, como a vítima sofreu devido à quebra de privacidade, e a potencial violação de dados levar a uma infelicidade maior, pode ser argumentado que a quebra de privacidade foi moralmente errada. \\
+Neste caso, como a vítima sofreu devido à quebra de privacidade, e a potencial violação de dados pode levar a uma infelicidade maior, pode ser argumentado que a quebra de privacidade foi moralmente errada. 
+
 
 \paragraph{Deontologia}
-Kant, filósofo famoso pela sua teoria deontológica, conclui que \citeyear{kant}: 
+Kant, filósofo famoso pela sua teoria deontológica, concluiu que (\citeyear{kant}): 
 \begin{displayquote} 
-  O bem preeminente que chamamos moral não pode, portanto, consistir em nada mais do que a concepção da lei em si, o que certamente só é possível em um ser racional, na medida em que essa concepção, e não o efeito esperado, determina a vontade.
+  O bem preeminente que chamamos moral não pode, portanto, consistir em nada mais do que a concepção da lei em si, o que certamente só é possível num ser racional, na medida em que essa concepção, e não o efeito esperado, determina a vontade.
 \end{displayquote}
-Para kant, uma ação é moralmente correta quando o agente ata no ser dever, e a consequência da ação esperada é irrelevante para o valor moral. Neste caso, consegue ser argumentado que a empresa privada tem o dever de não quebrar a privacidade da vítima, e portanto agiu de forma moralmente incorreta. Se o objetivo for a segurança pública, então tal empresa deve fazê-lo de forma que não quebre o seu dever à privacidade de clientes e cidadãos. \\
-Da mesma forma, o Código de Ética de Engenharia de \textit{Software} \parencite{code} delclara alguns princípios que os engenheiros e a organização não atuaram de acordo a, como:
+Para Kant, uma ação é moralmente correta quando o agente atua no ser dever, e a consequência da ação esperada é irrelevante para o valor moral. Neste caso, consegue-se argumentar que a empresa privada tem o dever de não quebrar a privacidade da vítima, e portanto agiu de forma moralmente incorreta. Se o objetivo for a segurança pública, então tal empresa deve fazê-lo de forma a não quebrar o seu dever à privacidade de clientes e cidadãos.
+
+
+Da mesma forma, o Código de Ética de Engenharia de \textit{Software} \parencite{code} declara alguns princípios que os engenheiros e a organização não atuaram de acordo, como:
 \begin{itemize}
   \item [1.10] "Trabalhe para desenvolver software [\dots] que respeitam a privacidade daqueles que serão submetidos a esse software";
   \item [1.13] "Trabalhe para identificar, definir e remediar problemas éticos, económicos, culturais, legais e ambientais relacionado com qualquer projeto";
   \item [2.01] "Divulgue às pessoas ou autoridades apropriadas de qualquer perigo real ou potencial para o usuário, um terceiro, ou meio ambiente, que ele razoalmente acredite estar associado ao software ou documentos relacionados pelos quais eles são responsáveis, ou apenas sabem sobre"
 \end{itemize}
-, entre outros. \\
+
 \subsection*{RGPD}
-O Regulamento Geral de Proteção de Dados (RGPD) \parencite{rgpd} é um regulamento europeu que define regras para a proteção de dados pessoais de cidadãos europeus. Este regulamento foi criado para proteger os direitos dos cidadãos europeus, e para garantir que as empresas que lidam com dados pessoais sigam regras específicas para proteger os dados pessoais. \\
-O caso como descrito consegue quebrar vários artigos do RGPD, como o Artigo 6.º, que define a licitude do tratamento. Nele se descreve que o tratamento só é lícito se O titular consentir, ou for necessário para a execução de: um contrato, obrigação jurídica, defesa do titular dos dados, exercício de funções de interesse público, ou para fins de interesses legítimos, excepto se prevalecerem os interesses do titular. Neste caso, apenas pode ser argumentado que o tratamento é lícito se conseguir-se provar a necessidade o interesse público, sendo que todos os outros pontos claramente não são argumentáveis. No entanto, para o tratamento ser lícito, o artigo expõe também que o contexto em que os dados foram recolhidos deve ser considerado, e que tem que existir salvaguardas adequadas, como a cifragem ou a pseudonimização, o que consegue ser argumentado que o caso não cumpre. \\
-Da mesma forma, o Artigo 9.º declara que "é proibido o tratamento de dados pessoais que revelem a origgem racial ou étnica, as opiniões políticas, [\dots], bem como o tratamento de dados genéticos, dados biométricos para identificar uma pessoa de forma inequívoca, [\dots]", sendo que nenhuma das exceções se aplicam ao caso. \\
+O Regulamento Geral de Proteção de Dados (RGPD) é um regulamento europeu que define regras para a proteção de dados pessoais de cidadãos europeus. Este regulamento foi criado para proteger os direitos dos cidadãos europeus, e para garantir que as empresas que lidam com dados pessoais sigam regras específicas para proteger os dados pessoais.
+
+
+O caso como descrito consegue quebrar vários artigos do RGPD, como o Artigo 6.\textdegree, que define a licitude do tratamento. Nele se descreve que o tratamento só é lícito se O titular consentir, ou for necessário para a execução de: um contrato, obrigação jurídica, defesa do titular dos dados, exercício de funções de interesse público, ou para fins de interesses legítimos, excepto se prevalecerem os interesses do titular. Neste caso, apenas pode ser argumentado que o tratamento é lícito se conseguir-se provar a necessidade do interesse público, sendo que todos os outros pontos claramente não são argumentáveis. No entanto, para o tratamento ser lícito, o artigo expõe também que o contexto em que os dados foram recolhidos deve ser considerado, e que têm que existir salvaguardas adequadas, como a cifragem ou a pseudonimização, o que consegue ser argumentado que o caso não cumpre. 
+
+
+Da mesma forma, o Artigo 9.\textdegree declara que "é proibido o tratamento de dados pessoais que revelem a origgem racial ou étnica, as opiniões políticas, [\dots], bem como o tratamento de dados genéticos, dados biométricos para identificar uma pessoa de forma inequívoca, [\dots]", sendo que nenhuma das exceções se aplicam ao caso.
+
+
 \section*{Conclusões e futuro}
-O caso descrito é um exemplo de RF feito de forma moralmente questionável, e não cumpre com os regulamentos europeus de proteção de dados. \textit{Clearview AI} deve ter em conta a moralidade e legalidade das suas ferramentas e dos seus agentes, mesmo que apenas disponibilize o serviço fora dos estados membros da União Europeia. Outras empresas, companhias e governos devem também ter em conta a moralidade de técnicas de reconhecinmento facial e empregá-las de forma segura e legal, de forma a não violar os direitos dos cidadãos, nacional e internacionalmente. Se isso não for possível nesta técnica de biometria, então dificilmente será o suporte para tal. \\
+O caso descrito é um exemplo de RF feito de forma moralmente questionável, e não cumpre com os regulamentos europeus de proteção de dados. \textit{Clearview AI} deve ter em conta a moralidade e legalidade das suas ferramentas e dos seus agentes, mesmo que apenas disponibilize o serviço fora dos estados membros da União Europeia. Outras empresas, companhias e governos devem também ter em conta a moralidade de técnicas de reconhecinmento facial e empregá-las de forma segura e legal, de forma a não violar os direitos dos cidadãos, nacional e internacionalmente. Se isso não for possível nesta técnica de biometria, então dificilmente será o suporte para tal.
+
+
 \printbibliography[title=Referências]
 \end{document}
  
