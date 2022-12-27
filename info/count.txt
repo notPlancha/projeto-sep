@@ -1,0 +1,28 @@
+File: ./first/first.tex
+Encoding: utf8
+Words in text: 220
+Words in headers: 29
+Words outside text (captions, etc.): 0
+Number of headers: 1
+Number of floats/tables/figures: 0
+Number of math inlines: 0
+Number of math displayed: 0
+
+File: ./second/second.tex
+Encoding: utf8
+Words in text: 1560
+Words in headers: 54
+Words outside text (captions, etc.): 0
+Number of headers: 11
+Number of floats/tables/figures: 0
+Number of math inlines: 0
+Number of math displayed: 0
+Subcounts:
+  text+headers+captions (#headers/#floats/#inlines/#displayed)
+  0+33+0 (1/0/0/0) Subsection
+  136+1+0 (1/0/0/0) Section: ClearviewAI
+  0+3+0 (1/0/0/0) Section: Análise do caso
+  1070+13+0 (6/0/0/0) Subsection: Ponto de vista ético
+  248+1+0 (1/0/0/0) Subsection: RGPD
+  106+3+0 (1/0/0/0) Section: Conclusões e futuro
+
